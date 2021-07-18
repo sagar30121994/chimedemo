@@ -1,0 +1,58 @@
+{
+  "name": "amazon-chime-sdk-component-library-react",
+  "version": "2.6.0",
+  "description": "Amazon Chime SDK Component Library - React",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": "^12 || ^14 || ^15 || ^16",
+    "npm": "^6 || ^7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aws/amazon-chime-sdk-component-library"
+  },
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "check": "node scripts/check-codestyle.js",
+    "release": "node scripts/release.js",
+    "prebuild:publish": "npm install && node scripts/prebuild.js --publish",
+    "build:publish": "npm run check && npm run build && npm run test ",
+    "postbuild:publish": "node scripts/postbuild.js",
+    "prebuild:release": "node scripts/prebuild.js",
+    "build:release": "npm install && npm run check && npm run build && npm run test ",
+    "postbuild:release": "node scripts/postbuild.js",
+    "start": "start-storybook -p 9009",
+    "test": "jest -c jest.config.js",
+    "deploy-storybook": "storybook-to-ghpages",
+    "build-storybook": "build-storybook",
+    "jest:integration": "jest -c jest-snapshot.config.js --verbose ./tst/snapshots/*",
+    "test:snapshots-path": "jest -c jest-snapshot.config.js --verbose",
+    "test:snapshots": "start-server-and-test start http-get://localhost:9009 jest:integration"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@popperjs/core": "^2.2.2",
+    "fast-memoize": "^2.5.2",
+    "react-popper": "^2.2.4",
+    "throttle-debounce": "^2.3.0",
+    "uuid": "^8.0.0"
+  },
+  "peerDependencies": {
+    "amazon-chime-sdk-js": "^2.11.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.0.0",
+    "styled-system": "^5.1.5"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "yalcSig": "b878f5bc2c1651d5aba2b34178984a90"
+}

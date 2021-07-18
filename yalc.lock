@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "amazon-chime-sdk-component-library-react": {
+      "signature": "b878f5bc2c1651d5aba2b34178984a90",
+      "file": true
+    }
+  }
+}
